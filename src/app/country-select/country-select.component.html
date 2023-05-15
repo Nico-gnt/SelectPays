@@ -1,0 +1,6 @@
+<input type="text" [formControl]="countryControl" (focus)="showList = true" (blur)="hideList()">
+<div *ngIf="showList">
+    <div *ngFor="let country of filteredCountries$ | async" (click)="selectCountry(country)">
+        {{country.name}}
+    </div>
+</div>
